@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellas Patrióticas – Tour Literario en Iguala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #003366;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section.hero {
+            height: 50vh;
+            background-image: url('https://www.conxionturistica.com/wp-content/uploads/2021/02/Museo_de_la_Bandera.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        section.hero h1 {
+            font-size: 2.5rem;
+            background-color: rgba(0, 51, 102, 0.7);
+            padding: 5px;
+            font-style: italic;
+            margin: 5px 0;
+        }
+
+        section.about,
+        section.routes,
+        section.promotions,
+        section.contact,
+        section.comments,
+        section.authors {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #003366;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #333;
+        }
+
+        .routes-grid,
+        .promotions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .route-item, .promotion-item {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .route-item img, .promotion-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .selected::after {
+            content: "✔";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #4CAF50;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form input,
+        form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px;
+            background-color: #005599;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comments {
+            margin-top: 50px;
+        }
+
+        .comment-box {
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .promotion-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .promotion-item ul {
+            list-style: none;
+            text-align: left;
+            padding: 0;
+        }
+
+        .promotion-item ul li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .promotion-item ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+        }
+
+        .authors-list {
+            list-style-type: disc; /* Viñetas */
+            padding-left: 20px; /* Espaciado para la lista */
+            text-align: justify;
+        }
+
+        .authors-list li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            section.hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script>
+        function confirmReservation() {
+            alert("¡Reserva confirmada!");
+        }
+
+        function confirmComment() {
+            alert("¡Comentario enviado!");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Huellas Patrióticas – Tour en Iguala</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre el Tour</a></li>
+                <li><a href="#authors">Autores Destacados</a></li>
+                <li><a href="#routes">Rutas</a></li>
+                <li><a href="#promotions">Promociones</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#comments">Comentarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Revive la historia, vive la libertad</h1>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Sobre el Tour</h2>
+        <p>Descubre la historia de la Independencia de México como nunca antes con nuestro tour interactivo en Iguala, una experiencia única que combina cultura, tecnología y autenticidad. A través del guía turístico y de los relatos de los famosos autores históricos se obtendrá conocimientos, te guiarás por las rutas literarias inspiradas en los personajes históricos que moldearon el destino de la nación. Con relatos, libros y dinámicas vivirás una experiencia educativa y entretenida, mientras exploras los mismos lugares donde ocurrieron los eventos clave de la Independencia.</p>
+    </section>
+
+    <section id="authors" class="authors">
+        <h2>Autores Destacados</h2>
+        <ul class="authors-list">
+            <li>Elena Garro</li>
+            <li>José María Morelos y Pavón</li>
+            <li>Rafael Heliodoro Valle</li>
+            <li>José Luis Martínez</li>
+            <li>Manuel Acuña</li>
+            <li>Francisco Hinojosa</li>
+            <li>Héctor Azar</li>
+            <li>José de la Luz y Caballero</li>
+            <li>Gabriela Mistral</li>
+            <li>Sergio Pitol</li>
+            <li>Antonio González Caballero</li>
+        </ul>
+        <p>y otros más...</p>
+    </section>
+
+    <section id="routes" class="routes">
+        <h2>Rutas Disponibles</h2>
+        <div class="routes-grid">
+            <div class="route-item" onclick="this.classList.toggle('selected')">
+                <img src="plaza3garantias.jpg" alt="Plaza de las Tres Garantías">
+                <h3>Plaza de las Tres Garantías</h3>
+                <p>Visita el lugar donde se firmó el Plan de Iguala, un hito en la historia de la Independencia de México.</p>
+            </div>
+            <div class="route-item" onclick="this.classList.toggle('selected')">
+                <img src="museobandera.jpg" alt="Museo de la Bandera">
+                <h3>Museo de la Bandera</h3>
+                <p>Descubre la historia detrás de la creación de la bandera de México en este icónico museo.</p>
+            </div>
+            <div class="route-item" onclick="this.classList.toggle('selected')">
+                <img src="Asta3.jpg" alt="Asta Bandera Monumental">
+                <h3>Ruta del Ejército Trigarante</h3>
+                <p>Sigue el camino del Ejército Trigarante hacia la consumación de la Independencia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="promotions" class="promotions">
+        <h2>Promociones</h2>
+        <div class="promotions-grid">
+            <div class="promotion-item">
+                <h3>Paquete Básico</h3>
+                <img src="paquetebasico.jpg" alt="Paquete Básico">
+                <ul>
+                    <li>Recorrido por todos los puntos históricos</li>
+                    <li>Guía turística experta</li>
+                    <li>Dinamica Interactiva de buscar códigos acumulables</li>
+                </ul>
+            </div>
+
+            <div class="promotion-item">
+                <h3>Paquete Premium</h3>
+                <img src="paquetepremium.jpg" alt="Paquete Premium">
+                <ul>
+                    <li>Todo lo del Paquete Básico</li>
+                    <li>Transporte de lujo</li>
+                    <li>Entrada gratuita al cine al final del tour</li>
+                    <li>Refrigerio de cortesia</li>
+                    <li>Obsequios de recuerdo de cortesía</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contacto y Reservaciones</h2>
+        <p>¿Interesado en unirte a nuestro tour? Completa el formulario para realizar una reservación o enviarnos un mensaje, y nos pondremos en contacto contigo.</p>
+        <form onsubmit="event.preventDefault(); confirmReservation();">
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="text" placeholder="Teléfono" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section id="comments" class="comments">
+        <h2>Comentarios</h2>
+        <form onsubmit="event.preventDefault(); confirmComment();">
+            <textarea placeholder="Escribe tu comentario..." required></textarea>
+            <button type="submit">Enviar Comentario</button>
+        </form>
+        <div class="comment-box">
+            <strong>Juan Pérez:</strong>
+            <p>¡Fue una experiencia increíble! Aprendí mucho sobre nuestra historia.</p>
+        </div>
+        <div class="comment-box">
+            <strong>María López:</strong>
+            <p>Los guías son muy profesionales y aprendi de las obras de diferentes autores, es increible el servicio.</p>
+        </div>
+        <div class="comment-box">
+            <strong>Pedro González:</strong>
+            <p>Una manera única de conocer las obras literarias historicas de la Independencia.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Huellas Patrióticas. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales: 
+            <a href="https://www.facebook.com/TourHuellaPatrotica" style="color: white; text-decoration: none;">Facebook</a> | 
+            <a href="https://chat.whatsapp.com/IBzadZ3snj1K2QLEeLueYx" style="color: white; text-decoration: none;">WhatsApp</a>
+        </p>
+    </footer>
+</body>
+</html>
+
